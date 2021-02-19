@@ -1,3 +1,0 @@
-Este es un txt para probar el fecth
-Y 123 en mi nueva rama, a ver si no lo rompo todo
-
