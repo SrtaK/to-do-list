@@ -20,6 +20,7 @@ export class ToDoList extends LitElement {
   render() {
     return html`
     <h1>Probando commit</h1>
+    <h2>Probando commit 2</h2>
       
     `;
   }
