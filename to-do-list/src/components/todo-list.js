@@ -29,17 +29,13 @@ export class TodoList extends LitElement {
   render() {
     return html`
       ${
-        this.items.map( item => html`<todo-item @eit-switch-checked="${this.newChecked}" .task=${item}></todo-item>
-`)
+        this.items.map( item => html`<todo-item @eit-switch-checked="${this.newChecked}" .task=${item}></todo-item>`)
       }
-
-    <todo-item task='{"name" : "de la lista", "completed" : true }'></todo-item>
-    <todo-item task='{"name" : "tambien listado", "completed" : false }'></todo-item>
     `;
   }
 
   newChecked(e){
-    console.log('esto es estopa')
+    console.log('Estoy en listado', e)
   }
 }
 customElements.define('todo-list', TodoList);
