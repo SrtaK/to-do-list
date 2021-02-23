@@ -15,14 +15,17 @@ export class TodoList extends LitElement {
         {
           name: 'uno',
           completed: false
+        
         },
         {
           name: 'dos',
           completed: false
+        
         },
         {
           name: 'tres',
           completed: true
+          
         },
     ]
   }

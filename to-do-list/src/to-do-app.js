@@ -16,15 +16,18 @@ export class TodoApp extends LitElement {
     this.todos = [
       {
         name: 'uno',
-        completed: false
+        completed: false,
+        id: 0
       },
       {
         name: 'dos',
-        completed: false
+        completed: false,
+        id: 1
       },
       {
         name: 'tres',
-        completed: true
+        completed: true, 
+        id: 2
       },
     ];
   }
@@ -48,7 +51,7 @@ export class TodoApp extends LitElement {
     <todo-list 
     id="listado" 
     .items="${this.todos}"
-    @eit-switch-checked="${this.taskChanged}"
+    @task-changed="${this.taskChanged}"
     ></todo-list>
       
     `;
@@ -68,13 +71,26 @@ export class TodoApp extends LitElement {
       {
         //y añadir los nuevos
         name: e.detail,
-        completed: false
+        completed: false, 
+        id: this.todos.length
       }
     ]
   }
 
   taskChanged(e){
-    console.log('checked', e.detail)
+    console.log('taskchandgeked', e.detail);
+    //con el método map itero sobre los elementos  del array modifico los que necesite y devuelvo un nuevo elemento transformado
+    this.todos = this.todos.map(item => {
+      if(item.id == e.detail.task.id){
+        return {
+          ...item,
+          //modifico el estado
+          completed: e.detail.state
+        }
+      }else{
+        return item;
+      }
+    })
   }
 }
 customElements.define('to-do-app', TodoApp);
