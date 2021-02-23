@@ -50,7 +50,7 @@ export class TodoApp extends LitElement {
     @task-added="${this.createTask}"></todo-add>
     <todo-list 
     id="listado" 
-    .items="${this.todos}"
+    .tasks="${this.todos}"
     @task-changed="${this.taskChanged}"
     ></todo-list>
       
