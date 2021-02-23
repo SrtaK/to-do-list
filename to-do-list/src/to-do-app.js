@@ -1,9 +1,10 @@
+
 import { LitElement, html, css } from 'lit-element';
 
-export class ToDoList extends LitElement {
+export class TodoApp extends LitElement {
   static get properties() {
     return {
-      title: { type: String },
+      heading: { type: String },
     };
   }
 
@@ -19,9 +20,10 @@ export class ToDoList extends LitElement {
 
   render() {
     return html`
-    <h1>Probando commit</h1>
-    <h2>Probando commit 2</h2>
+    <h1> To do App </h1>
+   
       
     `;
   }
 }
+customElements.define('to-do-app', TodoApp);
