@@ -29,13 +29,10 @@ export class TodoList extends LitElement {
   render() {
     return html`
       ${
-        this.items.map( item => html`<todo-item @eit-switch-checked="${this.newChecked}" .task=${item}></todo-item>`)
+        this.items.map( item => html`<todo-item .task=${item}></todo-item>`)
       }
     `;
   }
 
-  newChecked(e){
-    console.log('Estoy en listado', e)
-  }
 }
 customElements.define('todo-list', TodoList);

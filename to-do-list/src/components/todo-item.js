@@ -38,14 +38,14 @@ class TodoItem extends LitElement {
 
   //Cómo se si estoy chequeado
   checkedChanged(e){
-    console.log('checkedChanged', e);
     //voy a avisar al padre de que esa tarea se ha completado
     this.dispatchEvent(new CustomEvent('task-changed', {
       bubbles: true,
       composed: true,
       detail: {
         //paso los datos necesarios al padre
-        
+        state: e.detail,
+        task: this.task
       }
     }));
   } 
